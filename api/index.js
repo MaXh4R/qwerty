@@ -92,7 +92,7 @@ router.delete("/blogs/:id", async (req, res) => {
 });
 
 // Mount the router on /api
-app.use("/api", router);
+app.use("/", router);
 
 // Export for Vercel
 module.exports = app;
