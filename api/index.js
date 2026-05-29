@@ -90,11 +90,12 @@ router.delete("/blogs/:id", async (req, res) => {
   if (error) return res.status(500).json({ error: error.message });
   res.json({ message: "Blog berhasil dihapus" });
 });
+app.get("/", (req, res) => {
+  res.json({ message: "API is running", status: "ok"});
+});
 
 // Mount the router on /api
-app.use("/", router);
+app.use("/api", router);
 
 // Export for Vercel
 module.exports = app;
-
-// sdhbfdssdhs
