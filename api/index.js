@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path")
 const { createClient } = require("@supabase/supabase-js");
 
 const app = express();
@@ -90,9 +91,8 @@ router.delete("/blogs/:id", async (req, res) => {
   if (error) return res.status(500).json({ error: error.message });
   res.json({ message: "Blog berhasil dihapus" });
 });
-app.get("/", (req, res) => {
-  res.json({ message: "API is running", status: "ok"});
-});
+
+app.use(express.Route.static(path.join(__dirname, "../public")));
 
 // Mount the router on /api
 app.use("/api", router);
