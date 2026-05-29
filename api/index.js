@@ -25,11 +25,15 @@ router.post("/login", async (req, res) => {
     .eq("email", email)
     .eq("password", password);
 
-  if (data && data.length > 0) {
-    res.json({ message: "success", code: 200 });
-  } else {
-    res.json({ message: "failed", code: 403 });
+  if (error) {
+    return res.status(500).json({ message: "failed", code: 500, error: error.message });
   }
+
+  if (data && data.length > 0) {
+    return res.json({ message: "success", code: 200 });
+  }
+
+  return res.status(403).json({ message: "failed", code: 403 });
 });
 
 // --- BLOG ENDPOINTS ---
@@ -93,7 +97,7 @@ router.delete("/blogs/:id", async (req, res) => {
   res.json({ message: "Blog berhasil dihapus" });
 });
 
-app.use(express.Route.static(path.join(__dirname, "../public")));
+app.use(express.static(path.join(__dirname, "../public")));
 
 // Mount the router on /api
 app.use("/api", router);

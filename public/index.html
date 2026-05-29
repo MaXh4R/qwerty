@@ -156,7 +156,17 @@
           body: JSON.stringify({ email, password }),
         });
 
-        const result = await res.json();
+        let result;
+        try {
+          result = await res.json();
+        } catch (err) {
+          const text = await res.text();
+          console.error("Login API returned invalid JSON:", text);
+          erroremail.innerText = "Terjadi kesalahan server. Silakan coba lagi.";
+          errorPassword.innerText = "";
+          erroremail.classList.remove("hidden");
+          return;
+        }
 
         if (result.message === "success") {
           localStorage.setItem("isLogin", "true");
