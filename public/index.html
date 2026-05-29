@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="isolate bg-gray-900 px-6 py-24 sm:py-32 lg:px-8 h-screen">
+      <div
+        aria-hidden="true"
+        class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+      >
+        <div
+          style="
+            clip-path: polygon(
+              74.1% 44.1%,
+              100% 61.6%,
+              97.5% 26.9%,
+              85.5% 0.1%,
+              80.7% 2%,
+              72.5% 32.5%,
+              60.2% 62.4%,
+              52.4% 68.1%,
+              47.5% 58.3%,
+              45.2% 34.5%,
+              27.5% 76.7%,
+              0.1% 64.9%,
+              17.9% 100%,
+              27.6% 76.8%,
+              76.1% 97.7%,
+              74.1% 44.1%
+            );
+          "
+          class="relative left-1/2 -z-10 aspect-1155/678 w-144.5 max-w-none -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%-40rem)] sm:w-288.75"
+        ></div>
+      </div>
+      <div class="mx-auto max-w-2xl text-center">
+        <h2
+          class="text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl"
+        >
+          Login
+        </h2>
+        <p class="mt-2 text-lg/8 text-gray-400">Selamat Datang</p>
+      </div>
+      <div class="mx-auto mt-16 max-w-xl sm:mt-20">
+        <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+          <div class="sm:col-span-2">
+            <label
+              for="email"
+              class="block text-sm/6 font-semibold text-white"
+              >Email</label
+            >
+            <div class="mt-2.5">
+              <input
+                id="email"
+                type="email"
+                name="email"
+                autocomplete="organization"
+                class="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
+              />
+            </div>
+            <p
+              class="text-red-600 pt-2 font-semibold hidden"
+              id="error_email"
+            >
+              email anda salah
+            </p>
+          </div>
+          <div class="sm:col-span-2">
+            <label
+              for="password"
+              class="block text-sm/6 font-semibold text-white"
+              >Password</label
+            >
+            <div class="mt-2.5">
+              <input
+                id="password"
+                type="password"
+                name="password"
+                autocomplete="password"
+                class="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
+              />
+            </div>
+            <p
+              class="text-red-600 pt-2 font-semibold hidden"
+              id="error_password"
+            >
+              Password anda salah
+            </p>
+          </div>
+        </div>
+        <div class="mt-10">
+          <button
+            onclick="login()"
+            class="block w-full rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+          >
+            Login
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+
+    <script>
+      if (localStorage.getItem("isLogin") == "true") {
+        window.location.href = "dashboard.html";
+      }
+
+      const API = "/api/login";
+
+      async function login() {
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
+
+        const erroremail = document.getElementById("error_email");
+        const errorPassword = document.getElementById("error_password");
+
+        // Reset error dulu
+        erroremail.classList.add("hidden");
+        errorPassword.classList.add("hidden");
+
+        document.getElementById("email").classList.remove("outline-red-500");
+        document.getElementById("password").classList.remove("outline-red-500");
+
+        // Validasi kosong
+        if (email === "" && password === "") {
+          erroremail.innerText = "email tidak boleh kosong";
+          errorPassword.innerText = "Password tidak boleh kosong";
+
+          erroremail.classList.remove("hidden");
+          errorPassword.classList.remove("hidden");
+
+          return;
+        } else if (email === "") {
+          erroremail.innerText = "email tidak boleh kosong";
+          erroremail.classList.remove("hidden");
+          document.getElementById("email").classList.add("outline-red-500");
+          return;
+        } else if (password === "") {
+          errorPassword.innerText = "Password tidak boleh kosong";
+          errorPassword.classList.remove("hidden");
+          document.getElementById("password").classList.add("outline-red-500");
+          return;
+        }
+
+        // Jika lolos validasi, lanjut fetch
+        const res = await fetch(API, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password }),
+        });
+
+        const result = await res.json();
+
+        if (result.message === "success") {
+          localStorage.setItem("isLogin", "true");
+          localStorage.setItem(
+            "email",
+            document.getElementById("email").value,
+          );
+          window.location.href = "dashboard.html";
+        } else {
+          erroremail.innerText = "email salah";
+          errorPassword.innerText = "Password salah";
+
+          erroremail.classList.remove("hidden");
+          errorPassword.classList.remove("hidden");
+
+          document.getElementById("email").classList.add("outline-red-500");
+          document.getElementById("password").classList.add("outline-red-500");
+        }
+      }
+    </script>
+  </body>
+</html>
