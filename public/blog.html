@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <link
+            href="https://cdn.jsdelivr.net/npm/daisyui@5"
+            rel="stylesheet"
+            type="text/css"
+        />
+    </head>
+    <body>
+        <button
+            data-drawer-target="default-sidebar"
+            data-drawer-toggle="default-sidebar"
+            aria-controls="default-sidebar"
+            type="button"
+            class="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+        >
+            <span class="sr-only">Open sidebar</span>
+            <svg
+                class="w-6 h-6"
+                aria-hidden="true"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    clip-rule="evenodd"
+                    fill-rule="evenodd"
+                    d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
+                ></path>
+            </svg>
+        </button>
+
+        <aside
+            id="default-sidebar"
+            class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+            aria-label="Sidenav"
+        >
+            <div
+                class="overflow-y-auto py-5 px-3 h-full bg-white border-r border-gray-200"
+            >
+                <ul class="space-y-2">
+                    <li>
+                        <a
+                            href="dashboard.html"
+                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 group"
+                        >
+                            <svg
+                                class="w-6 h-6 text-gray-400 transition duration-75 group-hover:text-gray-900"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M11.293 3.293a1 1 0 0 1 1.414 0l6 6 2 2a1 1 0 0 1-1.414 1.414L19 12.414V19a2 2 0 0 1-2 2h-3a1 1 0 0 1-1-1v-3h-2v3a1 1 0 0 1-1 1H7a2 2 0 0 1-2-2v-6.586l-.293.293a1 1 0 0 1-1.414-1.414l2-2 6-6Z"
+                                    clip-rule="evenodd"
+                                />
+                            </svg>
+                            <span class="ml-3">Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="blog.html"
+                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg bg-gray-100 group"
+                        >
+                            <svg
+                                class="w-6 h-6 text-gray-400 transition duration-75 group-hover:text-gray-900"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6Zm4.996 2a1 1 0 0 0 0 2h.01a1 1 0 1 0 0-2h-.01ZM11 8a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2h-6Zm-4.004 3a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2h-.01ZM11 11a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2h-6Zm-4.004 3a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2h-.01ZM11 14a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2h-6Z"
+                                    clip-rule="evenodd"
+                                />
+                            </svg>
+
+                            <span class="ml-3">Blog</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="comment.html"
+                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 group"
+                        >
+                            <svg
+                                class="w-6 h-6 text-gray-400 transition duration-75 group-hover:text-gray-900"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M4 3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h1v2a1 1 0 0 0 1.707.707L9.414 13H15a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4Z"
+                                    clip-rule="evenodd"
+                                />
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M8.023 17.215c.033-.03.066-.062.098-.094L10.243 15H15a3 3 0 0 0 3-3V8h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-1v2a1 1 0 0 1-1.707.707L14.586 18H9a1 1 0 0 1-.977-.785Z"
+                                    clip-rule="evenodd"
+                                />
+                            </svg>
+
+                            <span class="ml-3">Comment</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="profile.html"
+                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 group"
+                        >
+                            <svg
+                                class="w-6 h-6 text-gray-400 transition duration-75 group-hover:text-gray-900"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M12 20a7.966 7.966 0 0 1-5.002-1.756l.002.001v-.683c0-1.794 1.492-3.25 3.333-3.25h3.334c1.84 0 3.333 1.456 3.333 3.25v.683A7.966 7.966 0 0 1 12 20ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10c0 5.5-4.44 9.963-9.932 10h-.138C6.438 21.962 2 17.5 2 12Zm10-5c-1.84 0-3.333 1.455-3.333 3.25S10.159 13.5 12 13.5c1.84 0 3.333-1.455 3.333-3.25S13.841 7 12 7Z"
+                                    clip-rule="evenodd"
+                                />
+                            </svg>
+
+                            <span class="ml-3">Profile</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="pt-5 mt-5 space-y-2 border-t border-gray-200">
+                    <li>
+                        <a
+                            href="#"
+                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg transition duration-300 outline-2 outline-transparent hover:bg-red-100 group hover:outline-2 hover:outline-red-500"
+                        >
+                            <svg
+                                class="flex-shrink-0 w-6 h-6 text-gray-400 transition duration-300 group-hover:text-red-900"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M20 12H8m12 0-4 4m4-4-4-4M9 4H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h2"
+                                />
+                            </svg>
+
+                            <button
+                                class="ml-3 size-full text-left group-hover:text-red-900"
+                                onclick="logout()"
+                            >
+                                Logout
+                            </button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            ]
+        </aside>
+
+        <section class="bg-gray-50 p-3 sm:p-5 sm:ml-64">
+            <div class="w-full bg-white p-4">
+                <!-- Tombol Tambah -->
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-bold">Daftar Blog</h2>
+                    <button
+                        onclick="my_modal_1.showModal()"
+                        class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2"
+                    >
+                        + Tambah Blog
+                    </button>
+                </div>
+
+                <!-- Tabel Blog -->
+                <table class="w-full text-sm text-left text-gray-500">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                        <tr>
+                            <th class="px-4 py-3">No</th>
+                            <th class="px-4 py-3">Judul</th>
+                            <th class="px-4 py-3">Isi</th>
+                            <th class="px-4 py-3">Kategori</th>
+                            <th class="px-4 py-3">Tanggal</th>
+                            <th class="px-4 py-3">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="blog-tbody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Modal Tambah -->
+        <dialog id="my_modal_1" class="modal">
+            <div class="modal-box">
+                <h3 class="text-lg font-bold">Tambah Blog Baru</h3>
+                <label class="label">Judul</label>
+                <input id="add-judul" type="text" class="input input-bordered w-full" placeholder="Judul blog" />
+                <label class="label mt-2">Isi</label>
+                <textarea id="add-isi" class="textarea textarea-bordered w-full" rows="4" placeholder="Isi blog..."></textarea>
+                <label class="label mt-2">Kategori</label>
+                <select id="add-kategori" class="select select-bordered w-full">
+                    <option disabled selected value="">Pilih kategori</option>
+                    <option value="teknologi">Teknologi</option>
+                    <option value="olahraga">Olahraga</option>
+                    <option value="pendidikan">Pendidikan</option>
+                    <option value="informasi">Informasi</option>
+                </select>
+                <div class="modal-action">
+                    <form method="dialog"><button class="btn">Batal</button></form>
+                    <button class="btn btn-primary" onclick="addBlog()">Simpan</button>
+                </div>
+            </div>
+        </dialog>
+
+        <!-- Modal Edit -->
+        <dialog id="my_modal_2" class="modal">
+            <div class="modal-box">
+                <h3 class="text-lg font-bold">Edit Blog</h3>
+                <input type="hidden" id="edit-id" />
+                <label class="label">Judul</label>
+                <input id="edit-judul" type="text" class="input input-bordered w-full" />
+                <label class="label mt-2">Isi</label>
+                <textarea id="edit-isi" class="textarea textarea-bordered w-full" rows="4"></textarea>
+                <label class="label mt-2">Kategori</label>
+                <select id="edit-kategori" class="select select-bordered w-full">
+                    <option disabled value="">Pilih kategori</option>
+                    <option value="teknologi">Teknologi</option>
+                    <option value="olahraga">Olahraga</option>
+                    <option value="pendidikan">Pendidikan</option>
+                    <option value="informasi">Informasi</option>
+                </select>
+                <div class="modal-action">
+                    <form method="dialog"><button class="btn">Batal</button></form>
+                    <button class="btn btn-primary" onclick="updateBlog()">Update</button>
+                </div>
+            </div>
+        </dialog>
+
+        <!-- Modal Hapus -->
+        <dialog id="my_modal_3" class="modal">
+            <div class="modal-box">
+                <h3 class="text-lg font-bold">Hapus Blog</h3>
+                <input type="hidden" id="delete-id" />
+                <p class="py-4">Yakin ingin menghapus blog ini?</p>
+                <div class="modal-action">
+                    <form method="dialog"><button class="btn">Batal</button></form>
+                    <button class="btn btn-error" onclick="deleteBlog()">Hapus</button>
+                </div>
+            </div>
+        </dialog>
+
+        <script>
+            // Cek login
+            if (localStorage.getItem("isLogin") !== "true") {
+                window.location.href = "index.html";
+            }
+
+            function logout() {
+                localStorage.removeItem("isLogin");
+                window.location.href = "index.html";
+            }
+
+            // Simpan data blog
+            var blogs = [];
+
+            // Ambil semua blog dari server
+            async function fetchBlogs() {
+                var res = await fetch("/api/blogs");
+                blogs = await res.json();
+                tampilkanBlog();
+            }
+
+            // Tampilkan blog ke tabel
+            function tampilkanBlog() {
+                var tbody = document.getElementById("blog-tbody");
+
+                if (blogs.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="6" class="px-4 py-6 text-center text-gray-400">Belum ada blog.</td></tr>';
+                    return;
+                }
+
+                var html = "";
+                for (var i = 0; i < blogs.length; i++) {
+                    var b = blogs[i];
+                    var tanggal = new Date(b.created_at).toLocaleDateString("id-ID");
+                    var kategori = b.kategori ? b.kategori.charAt(0).toUpperCase() + b.kategori.slice(1) : '-';
+                    html += '<tr class="border-b">' +
+                        '<td class="px-4 py-3">' + (i + 1) + '</td>' +
+                        '<td class="px-4 py-3">' + b.judul + '</td>' +
+                        '<td class="px-4 py-3">' + b.isi + '</td>' +
+                        '<td class="px-4 py-3"><span class="badge badge-outline">' + kategori + '</span></td>' +
+                        '<td class="px-4 py-3">' + tanggal + '</td>' +
+                        '<td class="px-4 py-3">' +
+                            '<button onclick="openEdit(' + b.id + ')" class="text-blue-600 hover:underline mr-2">Edit</button>' +
+                            '<button onclick="openDelete(' + b.id + ')" class="text-red-600 hover:underline">Hapus</button>' +
+                        '</td>' +
+                    '</tr>';
+                }
+                tbody.innerHTML = html;
+            }
+
+            // Tambah blog baru
+            async function addBlog() {
+                var judul = document.getElementById("add-judul").value;
+                var isi = document.getElementById("add-isi").value;
+                var kategori = document.getElementById("add-kategori").value;
+                if (!judul || !isi) return alert("Judul dan isi harus diisi!");
+
+                await fetch("/api/blogs", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ judul: judul, isi: isi, kategori: kategori })
+                });
+                document.getElementById("my_modal_1").close();
+                document.getElementById("add-judul").value = "";
+                document.getElementById("add-isi").value = "";
+                document.getElementById("add-kategori").value = "";
+                fetchBlogs();
+            }
+
+            // Buka modal edit
+            function openEdit(id) {
+                var blog = blogs.find(function(b) { return b.id === id; });
+                document.getElementById("edit-id").value = blog.id;
+                document.getElementById("edit-judul").value = blog.judul;
+                document.getElementById("edit-isi").value = blog.isi;
+                document.getElementById("edit-kategori").value = blog.kategori || "";
+                document.getElementById("my_modal_2").showModal();
+            }
+
+            // Update blog
+            async function updateBlog() {
+                var id = document.getElementById("edit-id").value;
+                var judul = document.getElementById("edit-judul").value;
+                var isi = document.getElementById("edit-isi").value;
+                var kategori = document.getElementById("edit-kategori").value;
+                if (!judul || !isi) return alert("Judul dan isi harus diisi!");
+
+                await fetch("/api/blogs/" + id, {
+                    method: "PUT",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ judul: judul, isi: isi, kategori: kategori })
+                });
+                document.getElementById("my_modal_2").close();
+                fetchBlogs();
+            }
+
+            // Buka modal hapus
+            function openDelete(id) {
+                document.getElementById("delete-id").value = id;
+                document.getElementById("my_modal_3").showModal();
+            }
+
+            // Hapus blog
+            async function deleteBlog() {
+                var id = document.getElementById("delete-id").value;
+                await fetch("/api/blogs/" + id, { method: "DELETE" });
+                document.getElementById("my_modal_3").close();
+                fetchBlogs();
+            }
+
+            // Jalankan saat halaman dimuat
+            fetchBlogs();
+        </script>
+    </body>
+</html>
